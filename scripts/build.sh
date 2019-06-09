@@ -24,6 +24,7 @@ CODE_DIR=$(cd $SCRIPT_DIR/..; pwd)
 echo $CODE_DIR
 
 REPO=${GROUP}/$(basename front-end);
-COMMIT_TAG=$(echo "$COMMIT" | gawk -F- '{print $2}')
 
-$DOCKER_CMD build -t ${REPO}:${COMMIT_TAG} .
+$DOCKER_CMD build -t ${REPO}:${COMMIT} .
+$DOCKER_CMD build -t ${REPO}:latest .
+#$DOCKER_CMD build -t ${REPO}:${COMMIT_TAG} .
