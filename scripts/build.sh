@@ -24,5 +24,6 @@ CODE_DIR=$(cd $SCRIPT_DIR/..; pwd)
 echo $CODE_DIR
 
 REPO=${GROUP}/$(basename front-end);
+COMMIT_TAG=$(echo $COMMIT | awk -d'-' '{print $2}')
 
-$DOCKER_CMD build -t ${REPO}:${TAG} .
+$DOCKER_CMD build -t ${REPO}:${COMMIT_TAG} .
